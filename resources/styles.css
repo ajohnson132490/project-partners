@@ -1,0 +1,84 @@
+/*Texts*/
+h1 {
+  font-size: 5em;
+}
+
+h3 {
+  font-size: 2.5em;
+}
+
+p {
+  font-size: 1em;
+}
+
+
+/*Menu*/
+header {
+  background-color: grey;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+  margin-bottom: 1.5em;
+}
+.menu:after {
+  display:flex;
+  align-items: center;
+  content: "";
+  clear: both;
+  width: 100%;
+  padding: .25em;
+}
+.menuItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  float: left;
+  width: 15%;
+  height: 50%;
+  margin-left: .25%;
+}
+.menuItem a {
+  text-decoration: none;
+  color: #353535;
+}
+
+/*Photos*/
+img {
+  width: 30%;
+}
+
+/*Random Text Blocks*/
+.description {
+  margin: 0 .5em 0 10em;
+  background-color: red;
+  width: 30%;
+  padding: 1em;
+}
+.logInForm{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 .5em 0 6em;
+  background-color: green;
+  width: 30%;
+  height: 30%;
+  padding: 1em;
+}
+.titleBlock {
+  display:flex;
+  align-items: center;
+  content: "";
+  clear: both;
+  margin: auto;
+  width: 80%;
+  background-color: blue;
+  padding: 2em;
+}
+
+/*Forms*/
+input {
+  margin: .5em;
+  padding: .5em;
+}
