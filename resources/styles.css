@@ -1,14 +1,14 @@
 /*Texts*/
 h1 {
-  font-size: 5em;
+  font-size: 450%;
 }
 
 h3 {
-  font-size: 2.5em;
+  font-size: 200%;
 }
 
 p {
-  font-size: 1em;
+  font-size: 100%;
 }
 
 
@@ -16,9 +16,9 @@ p {
 header {
   background-color: grey;
   position: sticky;
-  top: 0;
   overflow: hidden;
   margin-bottom: 1.5em;
+  width: 80%
 }
 .menu:after {
   display:flex;
@@ -26,7 +26,7 @@ header {
   content: "";
   clear: both;
   width: 100%;
-  padding: .25em;
+  padding: .25%;
 }
 .menuItem {
   display: flex;
@@ -50,22 +50,6 @@ img {
 }
 
 /*Random Text Blocks*/
-.description {
-  margin: 0 .5em 0 10em;
-  background-color: red;
-  width: 30%;
-  padding: 1em;
-}
-.logInForm{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 .5em 0 6em;
-  background-color: green;
-  width: 30%;
-  height: 30%;
-  padding: 1em;
-}
 .titleBlock {
   display:flex;
   align-items: center;
@@ -74,10 +58,33 @@ img {
   margin: auto;
   width: 80%;
   background-color: blue;
-  padding: 2em;
+  padding: 5%;
+}
+
+.description {
+  margin: 0 1% 0 7%;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  background-color: red;
+  padding: 3%;
+}
+.logInForm{
+  margin: 0 7% 0 6%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: green;
+  padding: 3%;
 }
 
 /*Forms*/
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 input {
   margin: .5em;
   padding: .5em;
