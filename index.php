@@ -36,46 +36,52 @@
 <html>
 
    <head>
-      <title>Login Page</title>
-
-      <style type = "text/css">
-         body {
-            font-family:Arial, Helvetica, sans-serif;
-            font-size:14px;
-         }
-         label {
-            font-weight:bold;
-            width:100px;
-            font-size:14px;
-         }
-         .box {
-            border:#666666 solid 1px;
-         }
-      </style>
-
+     <meta charset="utf-8">
+     <link rel="stylesheet" href="resources/styles.css">
+     <title>Project Partners</title>
    </head>
 
    <body bgcolor = "#FFFFFF">
-
-      <div align = "center">
-         <div style = "width:300px; border: solid 1px #333333; " align = "left">
-            <div style = "background-color:#333333; color:#FFFFFF; padding:3px;"><b>Login</b></div>
-
-            <div style = "margin:30px">
-
-               <form action = "" method = "post">
-                  <label>UserName  :</label><input type = "text" name = "username" class = "box"/><br /><br />
-                  <label>Password  :</label><input type = "password" name = "password" class = "box" /><br/><br />
-                  <input type = "submit" value = " Submit "/><br />
-               </form>
-
-               <div style = "font-size:11px; color:#cc0000; margin-top:10px"><?php echo $error;?></div>
-
-            </div>
-
+     <header>
+       <div class="menu">
+         <div class="menuItem" id="Logo">
+           <p>Logo</p>
          </div>
-
-      </div>
+         <div class="menuItem" id="Home">
+           <p>Home</p>
+         </div>
+         <div class="menuItem" id="Dashboard">
+           <p>Dashboard</p>
+         </div>
+         <div class="menuItem" id="Other">
+           <p>Something Else</p>
+         </div>
+         <div class="menuItem" id="Profile">
+           <p>Profile</p>
+         </div>
+       </div>
+     </header>
+        <main>
+          <div class="titleBlock">
+            <div class="description">
+              <h1 style="text-align:center">Project Partners</h1>
+              <h3 style= "text-align:center">Finding the Larry Page to your Sergey Brin</h3>
+            </div>
+            <div class="logInForm">
+              <form action = "" method = "post">
+                <p style="font-size: 150%; padding: 0; margin: 0; align-self: left;">Username:</p>
+                <input type = "text" name = "username" class = "box"/>
+                <br>
+                <p style="font-size: 150%; padding: 0; margin: 0; align-self: left;">Password:</p>
+                <input type = "password" name = "password" class = "box" />
+                <br><br>
+                <input type="submit" value="Log In">
+                <div style = "font-size:11px; margin-top:10px">Not a member? <a href="pages/signup.php">Sign up</a></div>
+              </form>
+              <div style = "font-size:11px; color:#cc0000; margin-top:10px"><?php echo $error;?></div>
+            </div>
+        </div>
+        </main>
 
    </body>
 </html>
