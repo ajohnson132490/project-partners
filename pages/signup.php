@@ -19,21 +19,23 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
    $myprofilepicture = mysqli_real_escape_string($db,$_POST['profilePicture']);
 
    if($mypassword == $myconfirmpassword) {
-    $exec = "INSERT INTO login_info (id, firstName, lastName, username, password, email, profilePicture)
-    VALUES (DEFAULT, '$myfirstname', '$mylastname', '$myusername', '$mypassword', '$email', '$myprofilepicture')";
-
-    if ($db->query($exec) === TRUE) {
-        echo "New record created successfully";
-        } else {
-    echo "Error: " . $exec . "<br>" . $db->error;
-        }
-
-     $_SESSION['login_user'] = $myfirstname + " " + $mylastname;
-
-     header("Location: /pages/welcome.php");
-     exit;
-
-   }else {
+       //Insert the info into database
+       $exec = "INSERT INTO login_info (id, firstName, lastName, username, password, email, profilePicture)
+       VALUES (DEFAULT, '$myfirstname', '$mylastname', '$myusername', '$mypassword', '$myemail', '$myprofilepicture')";
+       //Making Sure It Worked
+       if ($db->query($exec) === TRUE) {
+         $_SESSION['login_user'] = $myfirstname + " " + $mylastname;
+         //Go to the welcome page (Soon to be the dashboard)
+         header("Location: /pages/welcome.php");
+       } else {
+         echo "Error: " . $exec . "<br>" . $db->error;
+       }
+     }
+     else {
+      $error = "Please fill in all fields";
+     }
+   }
+   else {
       $error = "Your passwords do not match";
    }
 }
@@ -69,8 +71,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
      </header>
 
         <main>
-          <div class="signUpForm">
-            <div class="logInForm">
+          <div id="signUpForm" class="signUpForm">
               <form action = "" method = "post">
                 <p style="font-size: 150%; padding: 0; margin: 0; align-self: left;">First Name:</p>
                 <input type = "text" name = "firstName" class = "box"/>
@@ -96,7 +97,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 <input type="submit" value="Sign Up">
               </form>
               <div style = "font-size:11px; color:#cc0000; margin-top:10px"><?php echo $error;?></div>
-            </div>
           </div>
         </main>
    </body>

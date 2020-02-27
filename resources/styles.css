@@ -29,7 +29,7 @@ header {
   padding: .25%;
 }
 .menu p {
-  margin-top: 37.5%;
+  margin-top: 25%;
 }
 .menuItem {
   display: flex;
@@ -72,6 +72,14 @@ img {
   padding: 3%;
 }
 .logInForm{
+  margin: 0 7% 0 6%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: green;
+  padding: 3%;
+}
+.signUpForm{
   margin: 0 7% 0 6%;
   display: flex;
   align-items: center;
