@@ -13,9 +13,10 @@
       $myusername = mysqli_real_escape_string($db,$_POST['username']);
       $mypassword = mysqli_real_escape_string($db,$_POST['password']);
 
-      $sql = "SELECT id FROM login_info WHERE username = '$myusername' and password = '$mypassword'";
+      $sql = "SELECT * FROM login_info WHERE username = '$myusername' and password = '$mypassword'";
       $result = mysqli_query($db,$sql);
       $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+
       $active = $row['active'];
 
       $count = mysqli_num_rows($result);
@@ -23,9 +24,15 @@
       // If result matched $myusername and $mypassword, table row must be 1 row
 
       if($count == 1) {
-        $_SESSION['login_user'] = $myusername;
 
-        header("Location: /pages/welcome.php");
+        $_SESSION['login_firstName'] = $row["firstName"];
+        $_SESSION['login_lastName'] = $row["lastName"];
+        $_SESSION['login_email'] = $row['email'];
+        $_SESSION['login_profilePicture'] = $row['profilepicture'];
+        $_SESSION['login_user'] = $row['username'];
+
+
+        header("Location: /pages/profile.php");
         exit;
 
       }else {

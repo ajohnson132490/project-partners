@@ -19,18 +19,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
    $myprofilepicture = mysqli_real_escape_string($db,$_POST['profilePicture']);
 
    if($mypassword == $myconfirmpassword) {
-       //Insert the info into database
-       $exec = "INSERT INTO login_info (id, firstName, lastName, username, password, email, profilePicture)
-       VALUES (DEFAULT, '$myfirstname', '$mylastname', '$myusername', '$mypassword', '$myemail', '$myprofilepicture')";
-       //Making Sure It Worked
-       if ($db->query($exec) === TRUE) {
-         $_SESSION['login_user'] = $myfirstname + " " + $mylastname;
-         //Go to the welcome page (Soon to be the dashboard)
-         header("Location: /pages/welcome.php");
-       } else {
-         echo "Error: " . $exec . "<br>" . $db->error;
+       if ($myfirstname != '' && $mylastname != '' && $myusername != '' && $mypassword != '' && $myemail != '') {
+            //Insert the info into database
+            $exec = "INSERT INTO login_info (id, firstName, lastName, username, password, email, profilePicture)
+            VALUES (DEFAULT, '$myfirstname', '$mylastname', '$myusername', '$mypassword', '$myemail', '$myprofilepicture')";
+            //Making Sure It Worked
+            if ($db->query($exec) === TRUE) {
+              //Go to the welcome page (Soon to be the dashboard)
+             header("Location: /pages/profile.php");
+           } else {
+            echo "Error: " . $exec . "<br>" . $db->error;
+          }
        }
-     }
      else {
       $error = "Please fill in all fields";
      }

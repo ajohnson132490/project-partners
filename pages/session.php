@@ -4,11 +4,10 @@
 
    $user_check = $_SESSION['login_user'];
 
-   $ses_sql = mysqli_query($db,"select username from admin where username = '$user_check' ");
+   $ses_sql = mysqli_query($db,"select * from admin where username = '$user_check' ");
 
-   $row = mysqli_fetch_array($ses_sql,MYSQLI_ASSOC);
+   $row = mysqli_fetch_array($ses_sql,MYSQLI_BOTH);
 
-   $login_session = $_SESSION['login_user'];
 
    if(!isset($_SESSION['login_user'])){
       header("location: ../login.php");
