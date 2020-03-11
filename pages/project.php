@@ -1,17 +1,25 @@
 <?php
    include('session.php');
 
+   //Getting the data for the current project
    $ownr = $_SESSION['login_user'];
-   $sql = "SELECT * FROM project_list WHERE owner = '$ownr'";
+   $prjct = $_POST['current_project'];
+   $sql = "SELECT * FROM project_list WHERE owner = '$ownr' and title = '$prjct'";
    $result = mysqli_query($db,$sql);
    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+
+   //Local Project data
+   $mytitle = $row["title"];
+   $mydescription = $row["description"]
+
+
 ?>
 <html>
 
    <head>
-     <meta charset="utf-8">
-     <link rel="stylesheet" href="../resources/styles.css">
-     <title>Project Partners</title>
+       <meta charset="utf-8">
+       <link rel="stylesheet" href="../resources/styles.css">
+       <title>Project Partners</title>
    </head>
 
    <body>
@@ -38,12 +46,11 @@
        </div>
      </header>
      <main>
-       <div id = "projectBar" class="projectBar">
-         <?php echo $row[0] ?>
+       <p>First Name: <?php echo $mytitle?></p>
+       <p>Last Name: <?php echo $mydescription?></p>
 
-       </div>
-     </main>
+  
+
+    </main>
    </body>
-   <script src="../resources/global.js"></script>
-
 </html>

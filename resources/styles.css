@@ -52,7 +52,7 @@ img {
   width: 30%;
 }
 
-/*Random Text Blocks*/
+/*Home Page*/
 .titleBlock {
   display:flex;
   align-items: center;
@@ -71,6 +71,24 @@ img {
   background-color: red;
   padding: 3%;
 }
+
+/*Profile Page*/
+.projectBar {
+  background-color: orange;
+  display: flex;
+  align-self: flex-start;
+}
+
+/*Forms*/
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+input {
+  margin: .5em;
+  padding: .5em;
+}
 .logInForm{
   margin: 0 7% 0 6%;
   display: flex;
@@ -86,15 +104,4 @@ img {
   justify-content: center;
   background-color: green;
   padding: 3%;
-}
-
-/*Forms*/
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-input {
-  margin: .5em;
-  padding: .5em;
 }

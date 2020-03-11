@@ -6,7 +6,6 @@
     {
         echo "Database connection failed.";
     }
-
    if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent from form
 
@@ -65,6 +64,9 @@
          </div>
          <div class="menuItem" id="Profile">
            <p>Profile</p>
+         </div>
+         <div class="menuItem" id="Create">
+           <p style="font-size:275%; color:blue; margin-top:62.5%;">+</p>
          </div>
        </div>
      </header>
