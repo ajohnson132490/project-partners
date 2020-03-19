@@ -11,8 +11,6 @@
    //Local Project data
    $mytitle = $row["title"];
    $mydescription = $row["description"]
-
-
 ?>
 <html>
 
@@ -49,7 +47,9 @@
        <p>First Name: <?php echo $mytitle?></p>
        <p>Last Name: <?php echo $mydescription?></p>
 
-  
+       <div class="projectBar" id="projects">
+
+
 
     </main>
    </body>

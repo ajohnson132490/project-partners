@@ -21,7 +21,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     //Insert the info into database
     $exec = "INSERT INTO project_list (id, owner, title, description, photo1, photo2, photo3, photo4, photo5)
-    VALUES (DEFAULT, '$mytitle', '$mydescription', '$myphoto1', '$myphoto2', '$myphoto3', '$myphoto4', '$myphoto5')";
+    VALUES (DEFAULT, '$owner', '$mytitle', '$mydescription', '$myphoto1', '$myphoto2', '$myphoto3', '$myphoto4', '$myphoto5')";
     //Making Sure It Worked
     if ($db->query($exec) === TRUE) {
       //Go to the welcome page (Soon to be the dashboard)

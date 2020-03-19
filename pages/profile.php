@@ -33,15 +33,20 @@
            <p>Profile</p>
          </div>
          <div class="menuItem" id="Create">
-           <p style="font-size:275%; color:blue; margin-top:62.5%;">+</p>
+           <p style="font-size:275%; color:blue;"><a href="new-project.php">+</a></p>
          </div>
        </div>
      </header>
      <main>
        <div id = "projectBar" class="projectBar">
          <?php echo $row[0] ?>
-
        </div>
+       <h1>Welcome <?php echo $_SESSION['login_user']; ?></h1>
+       <p>First Name: <?php echo $_SESSION['login_firstName']?></p>
+       <p>Last Name: <?php echo $_SESSION['login_lastName']?></p>
+       <p>Email: <?php echo $_SESSION['login_email']?></p>
+       <p>Profile Picture: <?php echo $_SESSION['login_profilePicture']?></p>
+       <h2><a href = "logout.php">Sign Out</a></h2>
      </main>
    </body>
    <script src="../resources/global.js"></script>

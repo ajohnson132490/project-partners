@@ -10,3 +10,7 @@ Project Partners is a website designed to help people find like-minded individua
 2-27-2020: Austin created the profile page that displays all the users information.  It pulls info straight off of the database.  Still working on displaying the image.
 
 3-11-2020: Austin is creating a project page, but is struggling to create a flexible system.
+
+3-19-2020: Austin has created a second database to store all projects.  new-project.php is a form page used to create new projects under the current users ownership. project.php will probably be deleted soon because I'm not sure what it's for.  Current goals are to work on aesthetic, create a dashboard, and dynamically load projects into the profile page for viewing.  
+
+  Austin also brought Seth and Olivia on board.
