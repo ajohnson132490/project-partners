@@ -25,6 +25,37 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             VALUES (DEFAULT, '$myfirstname', '$mylastname', '$myusername', '$mypassword', '$myemail', '$myprofilepicture')";
             //Making Sure It Worked
             if ($db->query($exec) === TRUE) {
+              //Create a datatable for people you're following
+              $followingTable = "$myusername following";
+              $db->query("CREATE TABLE `".$followingTable."` (
+                id INT(1) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+                username VARCHAR(100) NOT NULL,
+                reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+                )");
+
+              //Create a datatable for people who follow you
+              $followerTable = "$myusername followers";
+              $db->query("CREATE TABLE `".followerTable."` (
+                id INT(1) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+                username VARCHAR(100) NOT NULL,
+                reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+                )");
+
+              //Create a datatable for projects
+              $projectTable = "$myusername projects";
+              $db->query("CREATE TABLE `".$projectTable."` (
+                id INT(1) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+                owner VARCHAR(100) NOT NULL,
+                title VARCHAR(50) NOT NULL,
+                description VARCHAR(5000),
+                photo1 VARCHAR(255),
+                photo2 VARCHAR(255),
+                photo3 VARCHAR(255),
+                photo4 VARCHAR(255),
+                photo5 VARCHAR(255),
+                reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+                )");
+
               //Go to the welcome page (Soon to be the dashboard)
              header("Location: /pages/profile.php");
            } else {

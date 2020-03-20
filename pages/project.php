@@ -1,18 +1,7 @@
 <?php
-   include('session.php');
+   $doc = new DOMDocument();
 
-   //Getting the data for the current project
-   $ownr = $_SESSION['login_user'];
-   $prjct = $_POST['current_project'];
-   $sql = "SELECT * FROM project_list WHERE owner = '$ownr' and title = '$prjct'";
-   $result = mysqli_query($db,$sql);
-   $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-
-   //Local Project data
-   $mytitle = $row["title"];
-   $mydescription = $row["description"]
-?>
-<html>
+   $doc->loadHTML('<html>
 
    <head>
        <meta charset="utf-8">
@@ -44,13 +33,41 @@
        </div>
      </header>
      <main>
-       <p>First Name: <?php echo $mytitle?></p>
-       <p>Last Name: <?php echo $mydescription?></p>
+       <p>First Name: </p>
+       <p>Last Name: </p>
 
-       <div class="projectBar" id="projects">
+       <div class="projectBar" id="projectsBar">
+       <p id="projects">Insert Point</p>
+       </div>
 
 
 
     </main>
    </body>
-</html>
+</html>');
+   include('session.php');
+
+   //Getting the data for the current project
+   $ownr = $_SESSION['login_user'];
+   $prjct = "$ownr projects";
+   $sql = "SELECT * FROM `$prjct`";
+   $result = mysqli_query($db,$sql);
+   $row_cnt = mysqli_num_rows($result);
+   $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+
+       // Create a paragraph element
+    $insert = $doc->getElementById("projects");
+  
+    // Create a project Box
+    for ($x = $row_cnt; $x > 0; $x--) {
+
+    $sql2 = "SELECT * FROM `$prjct` WHERE id=$x";
+    $result2 = mysqli_query($db,$sql2);
+    $row2 = mysqli_fetch_array($result2,MYSQLI_ASSOC);
+
+    //Insert a project Box
+    $project_element = $doc->createElement('p', $row2["title"]);
+    $insert->appendChild($project_element);
+    }
+    echo $doc->saveXML();
+?>
