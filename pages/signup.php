@@ -1,7 +1,7 @@
 <?php
 $doc = new DOMDocument();
 
-$doc->loadHTMLFile('html/new-project.html');
+$doc->loadHTMLFile('html/signup.html');
 include("config.php");
 session_start();
 // Check connection
@@ -23,6 +23,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
    if($mypassword == $myconfirmpassword) {
        if ($myfirstname != '' && $mylastname != '' && $myusername != '' && $mypassword != '' && $myemail != '') {
+          $sql = "SELECT * FROM login_info WHERE email = '$myemail' or username = '$myusername'";
+          $result = mysqli_query($db,$sql);
+
+          if (mysqli_num_rows($result)==0) {
             //Insert the info into database
             $exec = "INSERT INTO login_info (id, firstName, lastName, username, password, email, profilePicture)
             VALUES (DEFAULT, '$myfirstname', '$mylastname', '$myusername', '$mypassword', '$myemail', '$myprofilepicture')";
@@ -61,6 +65,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
               //Go to the welcome page (Soon to be the dashboard)
              header("Location: /pages/profile.php");
+           }
            } else {
             echo "Error: " . $exec . "<br>" . $db->error;
           }

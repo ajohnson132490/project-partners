@@ -37,3 +37,5 @@ Elements are now dynamically added to the projects page to show projects with th
 The dynamic projects loading into the profile page feature is now complete.  Projects are currently loaded into the projectBar div, but each project has an individual projectBox div.
 
 Lots of HTML and CSS styling to be done.
+
+3-21-2020: In order to sign up you now have to choose a unique username and email.
