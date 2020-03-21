@@ -1,54 +1,54 @@
 <?php
+   $doc = new DOMDocument();
+
+   $doc->loadHTMLFile('html/profile.html');
    include('session.php');
 
+   //Getting the data for the current project
    $ownr = $_SESSION['login_user'];
-   $sql = "SELECT * FROM project_list WHERE owner = '$ownr'";
+   $prjct = "$ownr projects";
+   $sql = "SELECT * FROM `$prjct`";
    $result = mysqli_query($db,$sql);
+   $row_cnt = mysqli_num_rows($result);
    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+
+
+    ///Project Side Bar
+    // Create an insertion point for the Projects element
+    $projectInsert = $doc->getElementById("projects");
+
+    // Create a project Box
+    for ($x = $row_cnt; $x > 0; $x--) {
+
+    $sql2 = "SELECT * FROM `$prjct` WHERE id=$x";
+    $result2 = mysqli_query($db,$sql2);
+    $row2 = mysqli_fetch_array($result2,MYSQLI_ASSOC);
+
+    //Insert a project Box
+    $projectBox = $doc->createElement('div');
+    $projectBox->setAttribute("class","projectBox");
+    $project_element_title = $doc->createElement('p', $row2["title"]);
+    $project_element_description = $doc->createElement('p', $row2["description"]);
+
+    $projectInsert->appendChild($projectBox);
+    $projectInsert->appendChild($project_element_title);
+    $projectInsert->appendChild($project_element_description);
+
+    }
+
+    ///Inserting User data to display
+    //Creating an insertion point for the user data
+    $bannerInsert = $doc->getElementById("welcomeBanner");
+    $fNameInsert = $doc->getElementById("fNameSpace");
+    $lNameInsert = $doc->getElementById("lNameSpace");
+    $emailInsert = $doc->getElementById("emailSpace");
+    $profilePictureInsert = $doc->getElementById("profilePictureSpace");
+
+    $bannerInsert->appendChild($doc->createElement('h1', $_SESSION["login_user"]));
+    $fNameInsert->appendChild($doc->createElement('p', $_SESSION["login_firstName"]));
+    $lNameInsert->appendChild($doc->createElement('p', $_SESSION["login_lastName"]));
+    $emailInsert->appendChild($doc->createElement('p', $_SESSION["login_email"]));
+    $profilePictureInsert->appendChild($doc->createElement('img', $_SESSION["login_profilePicture"]));
+
+    echo $doc->saveXML();
 ?>
-<html>
-
-   <head>
-     <meta charset="utf-8">
-     <link rel="stylesheet" href="../resources/styles.css">
-     <title>Project Partners</title>
-   </head>
-
-   <body>
-     <header>
-       <div class="menu">
-         <div class="menuItem" id="Logo">
-           <p>Logo</p>
-         </div>
-         <div class="menuItem" id="Home">
-           <p>Home</p>
-         </div>
-         <div class="menuItem" id="Dashboard">
-           <p>Dashboard</p>
-         </div>
-         <div class="menuItem" id="Other">
-           <p>Something Else</p>
-         </div>
-         <div class="menuItem" id="Profile">
-           <p>Profile</p>
-         </div>
-         <div class="menuItem" id="Create">
-           <p style="font-size:275%; color:blue;"><a href="new-project.php">+</a></p>
-         </div>
-       </div>
-     </header>
-     <main>
-       <div id = "projectBar" class="projectBar">
-         <?php echo $row[0] ?>
-       </div>
-       <h1>Welcome <?php echo $_SESSION['login_user']; ?></h1>
-       <p>First Name: <?php echo $_SESSION['login_firstName']?></p>
-       <p>Last Name: <?php echo $_SESSION['login_lastName']?></p>
-       <p>Email: <?php echo $_SESSION['login_email']?></p>
-       <p>Profile Picture: <?php echo $_SESSION['login_profilePicture']?></p>
-       <h2><a href = "logout.php">Sign Out</a></h2>
-     </main>
-   </body>
-   <script src="../resources/global.js"></script>
-
-</html>

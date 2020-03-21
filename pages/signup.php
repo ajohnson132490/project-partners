@@ -1,4 +1,7 @@
 <?php
+$doc = new DOMDocument();
+
+$doc->loadHTMLFile('html/new-project.html');
 include("config.php");
 session_start();
 // Check connection
@@ -70,65 +73,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
       $error = "Your passwords do not match";
    }
 }
+echo $doc->saveXML();
 ?>
-
-<html>
-
-   <head>
-     <meta charset="utf-8">
-     <link rel="stylesheet" href="../resources/styles.css">
-     <title>Project Partners</title>
-   </head>
-
-   <body bgcolor = "#FFFFFF">
-     <header>
-       <div class="menu">
-         <div class="menuItem" id="Logo">
-           <p>Logo</p>
-         </div>
-         <div class="menuItem" id="Home">
-           <p>Home</p>
-         </div>
-         <div class="menuItem" id="Dashboard">
-           <p>Dashboard</p>
-         </div>
-         <div class="menuItem" id="Other">
-           <p>Something Else</p>
-         </div>
-         <div class="menuItem" id="Profile">
-           <p>Profile</p>
-         </div>
-       </div>
-     </header>
-
-        <main>
-          <div id="signUpForm" class="signUpForm">
-              <form action = "" method = "post">
-                <p style="font-size: 150%; padding: 0; margin: 0; align-self: left;">First Name:</p>
-                <input type = "text" name = "firstName" class = "box"/>
-                <br>
-                <p style="font-size: 150%; padding: 0; margin: 0; align-self: left;">Last Name:</p>
-                <input type = "text" name = "lastName" class = "box"/>
-                <br>
-                <p style="font-size: 150%; padding: 0; margin: 0; align-self: left;">Username:</p>
-                <input type = "text" name = "username" class = "box"/>
-                <br>
-                <p style="font-size: 150%; padding: 0; margin: 0; align-self: left;">Password:</p>
-                <input type = "password" name = "password" class = "box" />
-                <br>
-                <p style="font-size: 150%; padding: 0; margin: 0; align-self: left;">Confirm Password:</p>
-                <input type = "password" name = "confirmPassword" class = "box" />
-                <br>
-                <p style="font-size: 150%; padding: 0; margin: 0; align-self: left;">Email:</p>
-                <input type = "email" name = "email" class = "box" />
-                <br>
-                <p style="font-size: 150%; padding: 0; margin: 0; align-self: left;">Upload Profile Picture:</p>
-                <input type = "file" name = "profilePicture" class = "box" />
-                <br>
-                <input type="submit" value="Sign Up">
-              </form>
-              <div style = "font-size:11px; color:#cc0000; margin-top:10px"><?php echo $error;?></div>
-          </div>
-        </main>
-   </body>
-</html>
