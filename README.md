@@ -23,8 +23,6 @@ index.php: Landing page with log in form.
 
 3-19-2020: Austin has created a second database to store all projects.  new-project.php is a form page used to create new projects under the current users ownership. project.php will probably be deleted soon because I'm not sure what it's for.  Current goals are to work on aesthetic, create a dashboard, and dynamically load projects into the profile page for viewing.  
 
-Austin also brought Seth and Olivia on board.
-
 Potential issue, when creating a new profile, the current system doesn't check for username duplicates
 
 Each user will be stored in login_info, but their data will be stored in personal tables for speed's sake.  Each user will have a table of for the list of people they're following, a table for the people who follow them, and a table for their projects.  So if the site gets big, it can be expanded to a bigger server instead of having huge tables.
@@ -39,3 +37,5 @@ The dynamic projects loading into the profile page feature is now complete.  Pro
 Lots of HTML and CSS styling to be done.
 
 3-21-2020: In order to sign up you now have to choose a unique username and email.
+
+A color scheme has been chosen, edf0f3-141b41-306bac-86898c-2d3132
