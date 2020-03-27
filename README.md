@@ -39,3 +39,5 @@ Lots of HTML and CSS styling to be done.
 3-21-2020: In order to sign up you now have to choose a unique username and email.
 
 A color scheme has been chosen, edf0f3-141b41-306bac-86898c-2d3132
+
+3-26-2020: The Home Page has been updated to fit the intended style and color scheme.  The text has a slight shadow glow on it to help it stand out.  An alternative is to add a white box with a low opacity.  The Profile Page is currently under way.  The "create new project" button needs to be a small image instead of text for the sake of size.  Profile picture still won't display.  Other features such as projects in the project bar have been tested using HTML, but not on the actual internet.

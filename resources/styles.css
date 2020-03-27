@@ -1,36 +1,41 @@
 /*Texts*/
 h1 {
-  font-size: 450%;
+  font-size: 600%;
 }
+
 h3 {
-  font-size: 200%;
+  font-size: 225%;
 }
+
 p {
   font-size: 100%;
 }
 
-
 /*Menu*/
 header {
-  background-color: grey;
+  display: table;
+  background-color: #0d1333;
   position: sticky;
   overflow: hidden;
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
   width: 100%;
   height: 7%;
+  text-align: center;
 }
+
 .menu:after {
-  display:flex;
-  align-items: center;
-  justify-content: center;
+  display: table-cell;
+  vertical-align: middle;
   content: "";
   clear: both;
   width: 100%;
   padding: .25%;
 }
+
 .menu p {
-  margin-top: 25%;
+  color: #c9cbd5;
 }
+
 .menuItem {
   display: flex;
   align-items: center;
@@ -42,6 +47,7 @@ header {
   height: 50%;
   margin-left: .25%;
 }
+
 .menuItem a {
   text-decoration: none;
   color: #353535;
@@ -54,30 +60,68 @@ img {
 
 /*Home Page*/
 .titleBlock {
-  display:flex;
+  display: flex;
   align-items: center;
   content: "";
   clear: both;
   margin: auto;
   width: 80%;
-  background-color: blue;
-  padding: 5%;
+  padding: 2.5%;
 }
+
 .description {
   margin: 0 1% 0 7%;
   display: flex;
   flex-direction: column;
   width: 50%;
-  background-color: red;
   padding: 3%;
 }
 
-/*Profile Page*/
-.projectBar {
-  background-color: orange;
+.description h1 {
+  text-shadow: 0 0 .05em #edf0f3;
+  margin: 5%;
 }
+
+.description h3 {
+  text-shadow: 0 0 .075em #edf0f3;
+  margin: 5%;
+}
+
+/*Profile Page*/
+.profileContent {
+  display: flex;
+  margin-left: 12.5%;
+  margin-right: 12.5%;
+}
+
+#profilePictureSpace {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60%;
+  width: 70%;
+  margin: 5% auto 0 auto;
+  border-style: solid;
+  border-color: #000000;
+  border-radius: 5%;
+}
+
+.projectBar {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: orange;
+  height: 15em;
+  width: 50em;
+  padding: 1em;
+  margin: 3em;
+}
+
 .projectBox {
   background-color: red;
+  padding: 1em;
+  height: 30%;
+  width: 37.5%;
+  margin: auto;
 }
 
 /*Forms*/
@@ -86,11 +130,38 @@ form {
   flex-direction: column;
   align-items: center;
 }
+
 input {
   margin: .5em;
   padding: .5em;
 }
-.logInForm{
+
+.logInForm {
+  margin: 0 7% 0 6%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2d3132;
+  border-color: #000000;
+  border-style: solid;
+  border-radius: 5%;
+  padding: 3%;
+}
+
+.logInForm p {
+  font-size: 200%;
+  padding: 0;
+  margin: 0;
+  align-self: left;
+  text-shadow: 0 0 .06em #edf0f3;
+}
+
+.logInForm a {
+  color: #306bac;
+  text-shadow: 0 0 0 #000000;
+}
+
+.signUpForm {
   margin: 0 7% 0 6%;
   display: flex;
   align-items: center;
@@ -98,11 +169,15 @@ input {
   background-color: green;
   padding: 3%;
 }
-.signUpForm{
-  margin: 0 7% 0 6%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: green;
-  padding: 3%;
+
+/*Misc*/
+html {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #141b41;
 }

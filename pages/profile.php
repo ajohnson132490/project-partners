@@ -38,20 +38,14 @@
 
     ///Inserting User data to display
     //Creating an insertion point for the user data
-    $bannerInsert = $doc->getElementById("welcomeBanner");
     $fNameInsert = $doc->getElementById("fNameSpace");
-    $lNameInsert = $doc->getElementById("lNameSpace");
-    $emailInsert = $doc->getElementById("emailSpace");
     $profilePictureInsert = $doc->getElementById("profilePictureSpace");
 
     $userData = "SELECT * FROM login_info WHERE username = '$ownr'";
     $dataResult = mysqli_query($db,$sql);
     $userDataRow = mysqli_fetch_array($result,MYSQLI_ASSOC);
 
-    $bannerInsert->appendChild($doc->createElement('h1', $_SESSION["login_user"]));
     $fNameInsert->appendChild($doc->createElement('p', $_SESSION["login_firstName"]));
-    $lNameInsert->appendChild($doc->createElement('p', $_SESSION["login_lastName"]));
-    $emailInsert->appendChild($doc->createElement('p', $_SESSION["login_email"]));
     $profilePictureInsert->appendChild($doc->createElement('img', $_SESSION["login_profilePicture"]));
 
     echo $doc->saveXML();
