@@ -7,6 +7,10 @@ h3 {
   font-size: 225%;
 }
 
+h4 {
+  font-size: 175%;
+}
+
 p {
   font-size: 100%;
 }
@@ -17,10 +21,10 @@ header {
   background-color: #0d1333;
   position: sticky;
   overflow: hidden;
-  margin-bottom: 1em;
   width: 100%;
   height: 7%;
   text-align: center;
+  margin-bottom: 1.5em;
 }
 
 .menu:after {
@@ -94,6 +98,16 @@ img {
   margin-right: 12.5%;
 }
 
+#profileProjectSpace {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgba(237, 240, 243, 0.125);
+  border-radius: 5%;
+  height: 100%;
+  width: 50em;
+  margin: 3em;
+}
+
 #profilePictureSpace {
   display: flex;
   align-items: center;
@@ -109,19 +123,23 @@ img {
 .projectBar {
   display: flex;
   flex-wrap: wrap;
-  background-color: orange;
-  height: 15em;
-  width: 50em;
+  background-color: #3e4142;
+  height: 100%;
+  width: 100%;
   padding: 1em;
-  margin: 3em;
 }
 
 .projectBox {
-  background-color: red;
+  background-color: #2d3132;
   padding: 1em;
   height: 30%;
   width: 37.5%;
-  margin: auto;
+  margin: 2% auto 2% auto;
+  border-radius: 15%;
+}
+
+.projectBox p {
+  color: #c9cbd5;
 }
 
 /*Forms*/
@@ -141,7 +159,7 @@ input {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #2d3132;
+  background-color: #3e4142;
   border-color: #000000;
   border-style: solid;
   border-radius: 5%;
@@ -153,12 +171,10 @@ input {
   padding: 0;
   margin: 0;
   align-self: left;
-  text-shadow: 0 0 .06em #edf0f3;
 }
 
 .logInForm a {
   color: #306bac;
-  text-shadow: 0 0 0 #000000;
 }
 
 .signUpForm {

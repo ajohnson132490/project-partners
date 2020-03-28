@@ -18,7 +18,7 @@
     $projectInsert = $doc->getElementById("projects");
 
     // Create a project Box
-    for ($x = $row_cnt; $x > 0; $x--) {
+    for ($x = $row_cnt; $x > $row_cnt-6; $x--) {
 
     $sql2 = "SELECT * FROM `$prjct` WHERE id=$x";
     $result2 = mysqli_query($db,$sql2);
