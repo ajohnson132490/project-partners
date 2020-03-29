@@ -64,7 +64,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 )");
 
               //Go to the welcome page (Soon to be the dashboard)
-             header("Location: /pages/profile.php");
+             header("Location: profile.php");
            }
            } else {
             echo "Error: " . $exec . "<br>" . $db->error;

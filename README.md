@@ -43,3 +43,11 @@ A color scheme has been chosen, edf0f3-141b41-306bac-86898c-2d3132
 3-26-2020: The Home Page has been updated to fit the intended style and color scheme.  The text has a slight shadow glow on it to help it stand out.  An alternative is to add a white box with a low opacity.  The Profile Page is currently under way.  The "create new project" button needs to be a small image instead of text for the sake of size.  Profile picture still won't display.  Other features such as projects in the project bar have been tested using HTML, but not on the actual internet.
 
 3-27-2020: Project Page is kind of in the style.  Maddie will be consulted on colors and other things of that nature.  Added a feature to only display the most recent 6 projects, but the feature remains untested.
+
+3-28-2020: Oddly enough the only display the most recent 6 projects feature works.  Right off the bat too.  The profile picture is still proving to be a hassle.  Database reconfiguration might be required and signup.php will have to be redone.
+
+The menu has been updated on all pages to make the profile and create a project button float left.  Create a project is the only link that currently works.  Temp logo picture added.
+
+Now every page has it's own style sheet to keep everything easier to access.
+
+Features to be implemented: Messages, followers, dashboard, global dashboard, editing user information, editing project information, page to display all projects, viewing others profiles. 
