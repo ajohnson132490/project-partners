@@ -30,7 +30,7 @@
         $_SESSION['login_firstName'] = $row["firstName"];
         $_SESSION['login_lastName'] = $row["lastName"];
         $_SESSION['login_email'] = $row['email'];
-        $_SESSION['login_profilePicture'] = $row['profilepicture'];
+        $_SESSION['login_profilePicture'] = $row['profilePictureData'];
         $_SESSION['login_user'] = $row['username'];
 
 

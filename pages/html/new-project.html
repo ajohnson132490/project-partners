@@ -3,14 +3,15 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="../../resources/styles.css">
+  <link rel="stylesheet" href="../../resources/newProjectStyles.css">
   <title>Project Partners</title>
 </head>
 
-<body bgcolor="#FFFFFF">
+<body>
   <header>
     <div class="menu">
       <div class="menuItem" id="Logo">
-        <p>Logo</p>
+        <img style="border-radius: 100%;" src="../../resources/images/Project Partners.jpg">
       </div>
       <div class="menuItem" id="Home">
         <p>Home</p>
@@ -21,32 +22,38 @@
       <div class="menuItem" id="Other">
         <p>Something Else</p>
       </div>
-      <div class="menuItem" id="Profile">
+      <div style="float:right; width: 5%;" class="menuItem" id="Profile">
         <p>Profile</p>
       </div>
-      <div class="menuItem" id="Create">
-        <p><a href="new-project.php">+</a></p>
+      <div style="float:right; width: 5%;" class="menuItem" id="Create">
+        <p><a href="../new-project.php">+</a></p>
       </div>
     </div>
   </header>
 
   <main>
     <form action="" method="post">
-      <p style="font-size: 150%; padding: 0; margin: 0; align-self: left;">Title:</p>
-      <input type="text" name="title" class="box" />
+      <div class="informationBox">
+        <p>Title:</p>
+        <input type="text" name="title" class="box" value="My Project" />
+      </div>
       <br>
-      <p style="font-size: 150%; padding: 0; margin: 0; align-self: left;">Description</p>
-      <input type="text" name="description" class="box" />
+      <div class="informationBox">
+        <p>Description:</p>
+        <input type="text" name="description" class="box" value="This project is going to change the world!" />
+      </div>
       <br>
-      <p style="font-size: 150%; padding: 0; margin: 0; align-self: left;">Upload Pictures</p>
-      <input type="file" name="photo1" class="box" />
-      <input type="file" name="photo2" class="box" />
-      <input type="file" name="photo3" class="box" />
-      <input type="file" name="photo4" class="box" />
-      <input type="file" name="photo5" class="box" />
+      <div class="informationBox">
+        <p>Upload Pictures:</p>
+        <input style="width: 30%;" type="file" name="photo1" class="box" />
+        <input style="width: 30%;" type="file" name="photo2" class="box" />
+        <input style="width: 30%;" type="file" name="photo3" class="box" />
+        <input style="width: 30%;" type="file" name="photo4" class="box" />
+        <input style="width: 30%;" type="file" name="photo5" class="box" />
+      </div>
       <br>
 
-      <input type="submit" value="Create">
+      <input id="submitButton" type="submit" value="Create">
     </form>
     <div style="font-size:11px; color:#cc0000; margin-top:10px"><?php echo $error;?></div>
   </main>

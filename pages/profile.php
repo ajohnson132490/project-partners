@@ -48,7 +48,7 @@
     $userDataRow = mysqli_fetch_array($result,MYSQLI_ASSOC);
 
     $fNameInsert->appendChild($doc->createElement('p', $_SESSION["login_firstName"]));
-    $profilePictureInsert->appendChild($doc->createElement('img', $_SESSION["login_profilePicture"]));
+    $profilePictureInsert->appendChild($doc->createElement('img', $userDataRow["profilePicture"]));
 
     echo $doc->saveXML();
 ?>

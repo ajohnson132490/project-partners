@@ -1,0 +1,28 @@
+/*Home Page*/
+.titleBlock {
+  display: flex;
+  align-items: center;
+  content: "";
+  clear: both;
+  margin: auto;
+  width: 80%;
+  padding: 2.5%;
+}
+
+.description {
+  margin: 0 1% 0 7%;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 3%;
+}
+
+.description h1 {
+  text-shadow: 0 0 .05em #edf0f3;
+  margin: 5%;
+}
+
+.description h3 {
+  text-shadow: 0 0 .075em #edf0f3;
+  margin: 5%;
+}
