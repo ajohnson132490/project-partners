@@ -15,10 +15,12 @@
 
     ///Project Side Bar
     // Create an insertion point for the Projects element
-    $projectInsert = $doc->getElementById("projects");
+
 
     // Create a project Box
-    for ($x = $row_cnt; $x > $row_cnt-6; $x--) {
+    $limit = $row_cnt - 6;
+    for ($x = $row_cnt; $x > $limit; $x--) {
+    $projectInsert = $doc->getElementById("projects");
 
     $sql2 = "SELECT * FROM `$prjct` WHERE id=$x";
     $result2 = mysqli_query($db,$sql2);
@@ -31,8 +33,8 @@
     $project_element_description = $doc->createElement('p', $row2["description"]);
 
     $projectInsert->appendChild($projectBox);
-    $projectInsert->appendChild($project_element_title);
-    $projectInsert->appendChild($project_element_description);
+    $projectBox->appendChild($project_element_title);
+    $projectBox->appendChild($project_element_description);
 
     }
 
