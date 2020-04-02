@@ -50,4 +50,6 @@ The menu has been updated on all pages to make the profile and create a project 
 
 Now every page has it's own style sheet to keep everything easier to access.
 
-Features to be implemented: Messages, followers, dashboard, global dashboard, editing user information, editing project information, page to display all projects, viewing others profiles. 
+Features to be implemented: Messages, followers, dashboard, global dashboard, editing user information, editing project information, page to display all projects, viewing others profiles, and the search bar.
+
+4-1-2020:1.032: I started on a search results page.  The search bar itself has yet to be made.
