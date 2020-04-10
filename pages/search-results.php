@@ -1,7 +1,7 @@
 <?php
    $doc = new DOMDocument();
 
-   $doc->loadHTMLFile('html/profile.html');
+   $doc->loadHTMLFile('html/search-results.html');
    include('session.php');
 
    //Getting the data for the current project

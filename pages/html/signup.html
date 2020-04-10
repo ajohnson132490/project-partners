@@ -1,4 +1,3 @@
-
 <html>
 
 <head>
@@ -11,7 +10,7 @@
   <header>
     <div class="menu">
       <div class="menuItem" id="Logo">
-        <img  style="border-radius: 100%;" src="../../resources/images/Project Partners.jpg">
+        <img style="border-radius: 100%;" src="../../resources/images/Project Partners.jpg">
       </div>
       <div class="menuItem" id="Home">
         <p>Home</p>
@@ -22,7 +21,13 @@
       <div class="menuItem" id="Other">
         <p>Something Else</p>
       </div>
-      <div style="float:right; width: 5%;"class="menuItem" id="Profile">
+      <div class="menuItem">
+        <form action="../search-results.php" method="post">
+          <input type="text" placeholder="Search.." name="search">
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+      </div>
+      <div style="float:right; width: 5%;" class="menuItem" id="Profile">
         <p>Profile</p>
       </div>
     </div>
