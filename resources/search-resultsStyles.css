@@ -1,0 +1,21 @@
+.resultsBar {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #3e4142;
+  height: 100%;
+  width: 100%;
+  padding: 1em;
+}
+
+.resultsBox {
+  background-color: #2d3132;
+  padding: 1em;
+  height: 30%;
+  width: 37.5%;
+  margin: 2% auto 2% auto;
+  border-radius: 15%;
+}
+
+.resultsBox p {
+  color: #c9cbd5;
+}

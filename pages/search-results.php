@@ -4,28 +4,27 @@
    $doc->loadHTMLFile('html/search-results.html');
    include('session.php');
 
-   //Getting the data for the current project
-   $ownr = $_SESSION['login_user'];
-   $prjct = "$ownr projects";
 
-    // Create a result Box
-    for ($x = $row_cnt; $x >= $row_cnt; $x--) {
+    $query = $_GET['search'];
+    $sql = "SELECT * FROM login_info WHERE username LIKE '$query'";
+    $result = mysqli_query($db,$sql);
+    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+    $row_cnt = mysqli_num_rows($result);
 
-    $resultInsert = $doc->getElementById("results");
+        // Create a results Box
+    $limit = $row_cnt - 6;
+    for ($x = $row_cnt; $x > $limit; $x--) {
+    $resultsInsert = $doc->getElementById("results");
 
-    $sql = "SELECT * FROM `$prjct` WHERE id=$x";
-    $result = mysqli_query($db,$sql2);
-    $row = mysqli_fetch_array($result2,MYSQLI_ASSOC);
+    //Insert a results Box
+    $resultsBox = $doc->createElement('div');
+    $resultsBox->setAttribute("class","resultsBox");
+    $results_element_title = $doc->createElement('p', $row["title"]);
+    $results_element_description = $doc->createElement('p', $row["description"]);
 
-    //Insert a project Box
-    $resultBox = $doc->createElement('div');
-    $resultBox->setAttribute("class","resultBox");
-    $project_element_title = $doc->createElement('p', $row2["title"]);
-    $project_element_description = $doc->createElement('p', $row2["description"]);
-
-    $projectInsert->appendChild($projectBox);
-    $projectBox->appendChild($project_element_title);
-    $projectBox->appendChild($project_element_description);
+    $resultsInsert->appendChild($resultsBox);
+    $resultsBox->appendChild($results_element_title);
+    $resultsBox->appendChild($results_element_description);
 
     }
 

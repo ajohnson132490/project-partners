@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="../../resources/styles.css">
-  <link rel="stylesheet" href="../../resources/profilePageStyles.css">
+  <link rel="stylesheet" href="../../resources/search-resultsStyles.css">
   <title>Project Partners</title>
 </head>
 
@@ -22,6 +22,12 @@
       <div class="menuItem" id="Other">
         <p>Something Else</p>
       </div>
+      <div class="menuItem">
+        <form action="search-results.php" method="GET">
+            <input id="search" name="search" type="text" placeholder="Type here">
+            <input id="submit" type="submit" value="Search">
+        </form>
+      </div>
       <div style="float:right; width: 5%;" class="menuItem" id="Profile">
         <p>Profile</p>
       </div>
@@ -31,7 +37,10 @@
     </div>
   </header>
   <main>
-    <p>The search query is <?php echo $_POST["search"];?></p>
+    <div class="resultsBar" id="resultsBar">
+          <h4 style="height: 30%; width: 100%; margin: auto;">Results</h4>
+          <p id="results"></p>
+        </div>
   </main>
 </body>
 <script src="../../resources/global.js"></script>

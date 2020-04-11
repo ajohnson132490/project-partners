@@ -54,4 +54,5 @@ Features to be implemented: Messages, followers, dashboard, global dashboard, ed
 
 4-1-2020:1.032: I started on a search results page.  The search bar itself has yet to be made.
 
-4-9-2020: 1.033: All README.md updates will now include what version the code is on just in case a reload from a previous version is necessary.   
+4-9-2020: 1.034: All README.md updates will now include what version the code is on just in case a reload from a previous version is necessary.
+The search bar has been created and partially implemented.  The next step is to gather search results from login_info, and all existing projects then put that data into stylized boxes similar to the project box.
