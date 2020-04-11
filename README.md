@@ -56,3 +56,7 @@ Features to be implemented: Messages, followers, dashboard, global dashboard, ed
 
 4-9-2020: 1.034: All README.md updates will now include what version the code is on just in case a reload from a previous version is necessary.
 The search bar has been created and partially implemented.  The next step is to gather search results from login_info, and all existing projects then put that data into stylized boxes similar to the project box.
+
+4-11-2020 1.036: The search bar now partially works.  It can locate users, but getting it to find projects is proving to be more difficult.
+
+Passwords need to be stored in a more secure way than plain text, a hash system is more standard.
