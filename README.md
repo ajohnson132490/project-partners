@@ -15,13 +15,13 @@ index.php: Landing page with log in form.
 
 2-25-2020: Added a sign up page that inserts data into the mySQL server.  It takes in first and last name, username, password, email and profile picture.  Still need to figure out how to make it mandatory because currently, all information in the form is optional.  Not a hard fix, but it's 2am.
 
-2-26-2020: Austin made it so that all fields are mandatory except for the profile picture.  Then Austin spent way too long trying to auto insert a default picture.  Better idea is to load the default picture in the profile page if the field is empty.  But auto insertion would be better in the long run.
+2-26-2020: I made it so that all fields are mandatory except for the profile picture.  Then I spent way too long trying to auto insert a default picture.  Better idea is to load the default picture in the profile page if the field is empty.  But auto insertion would be better in the long run.
 
-2-27-2020: Austin created the profile page that displays all the users information.  It pulls info straight off of the database.  Still working on displaying the image.
+2-27-2020: I created the profile page that displays all the users information.  It pulls info straight off of the database.  Still working on displaying the image.
 
-3-11-2020: Austin is creating a project page, but is struggling to create a flexible system.
+3-11-2020: I is creating a project page, but is struggling to create a flexible system.
 
-3-19-2020: Austin has created a second database to store all projects.  new-project.php is a form page used to create new projects under the current users ownership. project.php will probably be deleted soon because I'm not sure what it's for.  Current goals are to work on aesthetic, create a dashboard, and dynamically load projects into the profile page for viewing.  
+3-19-2020: I has created a second database to store all projects.  new-project.php is a form page used to create new projects under the current users ownership. project.php will probably be deleted soon because I'm not sure what it's for.  Current goals are to work on aesthetic, create a dashboard, and dynamically load projects into the profile page for viewing.  
 
 Potential issue, when creating a new profile, the current system doesn't check for username duplicates
 
@@ -30,7 +30,7 @@ Each user will be stored in login_info, but their data will be stored in persona
 Elements are now dynamically added to the projects page to show projects with the newest at the top.  This feature still needs to be added to the profile page.  New format for pages rolling out soon.  It will separate the PHP from the HTML for easier work flow and functionality.  Planning for a virtual team meeting on Saturday to make some major leaps such as beginning website design, adding full functionality to current pages, reformatting, and creating a follower/following system.
 
 
-3-20-2020: Austin standardized the pages!  The PHP is now separate from the HTML for easier work flow.
+3-20-2020: I standardized the pages!  The PHP is now separate from the HTML for easier work flow.
 
 The dynamic projects loading into the profile page feature is now complete.  Projects are currently loaded into the projectBar div, but each project has an individual projectBox div.
 
@@ -60,3 +60,5 @@ The search bar has been created and partially implemented.  The next step is to 
 4-11-2020 1.036: The search bar now partially works.  It can locate users, but getting it to find projects is proving to be more difficult.
 
 Passwords need to be stored in a more secure way than plain text, a hash system is more standard.
+
+7-3-2021: Created a new branch to develop the instant messaging feature, which I believe will be the hardest part. Currently following some tutorials to learn AJAX, which is a lot of fun. Once messaging is figured out, I will revamp profiles in such a way that increases password security, allows users to friend one another, and shows your friends list. New databases will also need to be created, as I have stopped paying for the project partners domain, and cancelled my subscription for the database and hosting. I was unaware that I could develop the site locally, with a local server and database, then launch it when I'm done. How foolish. Also, IM work branch won't have any version numbers until I've gone beyone just learning how IM works, and have moved into implementation.
